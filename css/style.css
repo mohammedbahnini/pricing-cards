@@ -110,7 +110,7 @@ z-index: 5;
 
 
 .checkbox input[type=checkbox]:checked + label::after{
-   left : calc( 100% - 28px );
+   left : calc( 100% - 1.8rem );
 }
 
 .checkbox{
