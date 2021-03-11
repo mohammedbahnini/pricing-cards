@@ -86,15 +86,13 @@ z-index: 5;
     border-radius : 1.66rem;
 }
 
-.checkbox input[type=checkbox] +label:hover::before{
-    background-color : var(--checkboxHoverd);
-}
+
 
 
 .checkbox input[type=checkbox] + label::after{
     content : '';
     position: absolute;
-    top :2px;
+    top : 0.2rem;
     left : 3px;
     width : 1.6rem;
     height: 1.6rem;
@@ -212,13 +210,7 @@ margin-right : 0.5rem;
 .btn:hover{
     padding: calc(0.66rem - 1px );
 }
-.btn:hover{
-    border : 1px solid #7E83E4;
-    background-image: none;
-    background-color : white ;
-    color :hsl(237, 63%, 64%);
-    
-}
+
 
 .btn-reverse{
     color : hsl(237, 63%, 64%);
@@ -226,18 +218,30 @@ margin-right : 0.5rem;
     background-color : white ;
 }
 
-.btn.btn-reverse:hover{
-    border : 1px solid white;
-    background-image:  linear-gradient(130deg , var(--linearGradientFrom)  , var(--linearGradientTo));;
-    background-color : none ;
-    color :white;
-}
+
 @media (min-width : 375px){
+    .checkbox input[type=checkbox] +label:hover::before{
+        background-color : var(--checkboxHoverd);
+    }
     .card:first-child{
         border-radius: 15px 0 0 15px;
     }
     .card:last-child{
         border-radius : 0 15px 15px 0;
+    }
+
+    .btn:hover{
+        border : 1px solid #7E83E4;
+        background-image: none;
+        background-color : white ;
+        color :hsl(237, 63%, 64%);
+        
+    }
+    .btn.btn-reverse:hover{
+        border : 1px solid white;
+        background-image:  linear-gradient(130deg , var(--linearGradientFrom)  , var(--linearGradientTo));;
+        background-color : none ;
+        color :white;
     }
     
 }
@@ -256,7 +260,9 @@ margin-right : 0.5rem;
     header{
         padding-top : 2rem;
     }
-
+    .princing-choice{
+        font-size : 1.6rem;
+    }
     .card{
         width : 100%;
         border-radius : 1.33rem;
