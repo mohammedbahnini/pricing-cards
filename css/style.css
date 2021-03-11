@@ -93,7 +93,7 @@ z-index: 5;
     content : '';
     position: absolute;
     top : 0.2rem;
-    left : 3px;
+    left : 0.2rem;
     width : 1.6rem;
     height: 1.6rem;
     background-color : white;
