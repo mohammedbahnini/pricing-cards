@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing : border-box;
+}
+:root{
+    --primaryColor : #484A5D;
+    --secondColor : #B9BBC7;
+    --thirdColor : #6F7084;
+
+    --checkboxColor : #7E83E4;
+    --checkboxHoverd : #C7C9F2;
+
+    --listSeparetor : #E7E7E7;
+
+    --linearGradientFrom : hsl(236, 72%, 79%);
+    --linearGradientTo : hsl(237, 63%, 64%);
+}
+html {
+    font-size : 15px;
+}
+body {
+    min-height: 100vh ;
+    font-family: 'Montserrat', sans-serif;
+    background-color : #F7F7FF;
+    background-image: url("../images/bg-top.svg")  ,
+    url("../images/bg-bottom.svg") ;
+    background-repeat: no-repeat;
+    background-position-x: right ,left ;
+    background-position-y: top , bottom ;
+}
+header{
+    padding-top : 100px;
+}
+a{
+    text-decoration: none;
+}
+ul   {
+    list-style-type: none;
+}
+.p-color {
+    color : var(--primaryColor);
+}
+.s-color {
+    color : var(--secondColor);
+}
+.third-color {
+    color : var(--thirdColor);
+}
+.jc-center{
+    justify-content: center;
+}
+.ai-center{
+    align-items: center;
+}
+.d-flex{
+    display: flex;
+}
+.text-center{
+    text-align: center;
+}
+
+.text-upper{
+    text-transform: uppercase;
+}
+.checkbox input[type=checkbox]{
+    display: none;
+}
+.checkbox input[type=checkbox] + label{
+position :relative;
+transition: .3s ease;
+width: 4rem;
+height : 2rem;
+display: inline-block;
+z-index: 5;
+}
+
+.checkbox input[type=checkbox] + label::before{
+    content : '';
+    position: absolute;
+    top :0;
+    left : 0;
+    width : 100%;
+    height: 100%;
+    background-color : var(--checkboxColor);
+    border-radius : 1.66rem;
+}
+
+.checkbox input[type=checkbox] +label:hover::before{
+    background-color : var(--checkboxHoverd);
+}
+
+
+.checkbox input[type=checkbox] + label::after{
+    content : '';
+    position: absolute;
+    top :2px;
+    left : 3px;
+    width : 1.6rem;
+    height: 1.6rem;
+    background-color : white;
+    border-radius: 50%;
+
+}
+.checkbox input[type=checkbox] + label::before , 
+.checkbox input[type=checkbox] + label::after{
+    transition: .3s ease;
+    cursor: pointer;
+}
+
+
+.checkbox input[type=checkbox]:checked + label::after{
+   left : calc( 100% - 28px );
+}
+
+.checkbox{
+    margin : 0 25px;
+}
+.princing-choice{
+    display: flex;
+    padding-top: 40px;
+}
+
+.cards{
+    display: flex;
+    margin-top: 3rem;
+}
+
+
+.card{
+    background-color : white ;
+    padding: 1.5rem;
+    box-shadow: 0 0 20px 0px rgb(0 0 0 / 10%);
+}
+
+.card-title {
+    padding: 1.75px 0;
+    font-size: 1.75rem; 
+}
+
+.card-price{
+    font-size : 5.5rem;
+    padding : 0 1.75rem 1.75rem;
+    color : var(--primaryColor);
+}
+
+.price-currency{
+font-size : 50%;
+margin-right : 0.5rem;
+}
+
+.card .card-list {
+    border-top : 1px solid var(--listSeparetor);
+    border-bottom : 1px solid var(--listSeparetor);
+    margin-bottom: 2rem;
+}
+
+.card-list .card-list-item {
+    font-size : 1.5rem;
+    padding : 1.3rem 0;
+}
+
+.card-list-item:not(:last-child){
+    border-bottom : 1px solid var(--listSeparetor);
+}
+
+
+.card.active{
+    border-radius : 15px;
+}
+
+.card.active h1 , 
+.card.active h2 ,
+.card.active h3 , 
+.card.active h4 , 
+.card.active h5 , 
+.card.active h6 , 
+.card.active p{
+    color : white ;
+}
+
+
+.card.active {
+    color : white ;
+    z-index : 2;
+    background-image : linear-gradient(130deg, var(--linearGradientFrom) , var(--linearGradientTo)) ;
+}
+
+.card.active .card-list-item{
+    color :white;
+}
+
+.card.active .card-header {
+    margin-top: 1.5rem;
+}
+.card.active .card-footer{
+    margin-bottom : 1.5rem;
+}
+
+.btn {
+    padding : 0.66rem;
+    border-radius : 5px;
+    position: relative;
+    color : white ;
+    background-image: linear-gradient(130deg , var(--linearGradientFrom)  , var(--linearGradientTo));
+}
+
+.btn-block{
+    width: 100%;
+    display: block;
+}
+.btn:hover{
+    padding: calc(0.66rem - 1px );
+}
+.btn:hover{
+    border : 1px solid #7E83E4;
+    background-image: none;
+    background-color : white ;
+    color :hsl(237, 63%, 64%);
+    
+}
+
+.btn-reverse{
+    color : hsl(237, 63%, 64%);
+    background-image: none;
+    background-color : white ;
+}
+
+.btn.btn-reverse:hover{
+    border : 1px solid white;
+    background-image:  linear-gradient(130deg , var(--linearGradientFrom)  , var(--linearGradientTo));;
+    background-color : none ;
+    color :white;
+}
+@media (min-width : 375px){
+    .card:first-child{
+        border-radius: 15px 0 0 15px;
+    }
+    .card:last-child{
+        border-radius : 0 15px 15px 0;
+    }
+    
+}
+@media screen and (max-width : 375px){
+    html{
+        font-size: 10px;
+    }
+    body{
+        padding: 1.5rem;
+    background-image: url("../images/bg-top.svg");
+    background-repeat: no-repeat;
+    background-position-x: 18rem;
+    background-size: 79%;
+    }
+
+    header{
+        padding-top : 2rem;
+    }
+
+    .card{
+        width : 100%;
+        border-radius : 1.33rem;
+        padding-bottom : 2rem;
+    }
+    .card-title{
+        padding : 2rem;
+    }
+    .card:not(:last-child){
+        margin-bottom : 3rem;
+    }
+    .cards{
+        flex-wrap: wrap;
+    }
+
+    .card.active .card-header{
+        margin : 0;
+    }
+    .btn{
+        font-size : 1.5rem;
+    }
+
+    .card.active .card-header ,
+    .card.active .card-footer
+    {
+        margin: 0;
+    }
+    
+}
